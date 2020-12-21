@@ -20,6 +20,6 @@ client.on('message', msg =>{
 
 client.on('message', msg => {
     if(msg.content === '!log'){
-        msg.channel.send('@everyone https://tenor.com/view/log-power-fire-burning-mad-gif-16474420')
+        msg.channel.send('@core https://tenor.com/view/log-power-fire-burning-mad-gif-16474420')
     }
 })
