@@ -6,15 +6,22 @@ const client = new Discord.Client();
 
 client.on('ready', ()=> {
     console.log('Bot ready');
+    console.log(client.user.id)
 })
 
 client.login(process.env.BOT_TOKEN);
 
-client.on('message', msg =>{
-    if (msg.content === 'uwu' || msg.content === 'UWU' || msg.content === 'Uwu'){
-        msg.reply('owo');
-    } else if (msg.content === 'owo' || msg.content === 'OWO' || msg.content === 'Owo'){
-        msg.reply('uwu')
+client.on('message', msg => {
+    if( (msg.author.id != 790376929274232872) && (msg.content.includes('uwu')) 
+    || msg.content.includes('UWU') || (msg.content.includes('Uwu')) ){
+        msg.channel.send('owo')
+    }
+})
+
+client.on('message', msg => {
+    if( (msg.author.id != 790376929274232872) && (msg.content.includes('owo')) 
+    || msg.content.includes('OWO') || (msg.content.includes('Owo')) ){
+        msg.channel.send('uwu')
     }
 })
 
