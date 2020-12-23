@@ -2,6 +2,9 @@ require('dotenv').config();
 
 const Discord = require('discord.js');
 const client = new Discord.Client();
+const CronJob = require('cron').CronJob;
+
+client.login(process.env.BOT_TOKEN);
 
 const gatito1 = 'https://i.imgur.com/CEbkjll.jpeg' ;
 const gatito2 = 'https://i.imgur.com/60aGajj.jpg';
@@ -12,11 +15,22 @@ const gatito6 = 'https://i.pinimg.com/originals/8a/df/cf/8adfcf0b90aef150f56374c
 const gatito7 = 'https://i.imgur.com/ryh89Vx.mp4';
 const gatito8 = 'https://i.pinimg.com/originals/0d/cf/dc/0dcfdc28e45540f709ee305ec4ff5289.jpg';
 const gatito9 = 'https://imgur.com/aifOQYw';
-const gatito10 = 'https://i.pinimg.com/564x/2e/59/db/2e59dbca2dae586d1a89cc868a67d1d8.jpg';
+const gatito10 = 'https://i.pinimg.com/564x/c3/10/5c/c3105cee5f7f39fb7936993204b732fb.jpg';
 
 const gatitos = [gatito1, gatito2, gatito3, gatito4, gatito5, gatito6, gatito7, gatito8, gatito9, gatito10];
 
-var d = new Date();
+const raidOne = {
+    day: 3,
+    time: '1am st / 6pm cst'
+}
+
+const raidTwo = {
+    day: 3,
+    time: '3:30am st / 9:30pm cst'
+}
+
+
+    var d = new Date();
     var weekday = new Array(7);
     weekday[0] = "Sunday";
     weekday[1] = "Monday";
@@ -28,40 +42,52 @@ var d = new Date();
 
     var n = weekday[d.getDay()];
 
-    var h = d.getHours();
-    var m = d.getMinutes();
-    var s = d.getSeconds();
-
+    const anunChannelId = '747734434677260328' ;
+    const testChannelId = '790406605438189598'
+ 
 client.on('ready', ()=> {
     console.log('Bot ready');
-    console.log(client.user.id)
-    console.log(n , h , m , s)
+    
+    const raidOneAn = new CronJob(`0 10 20 * * ${raidOne.day}`, () => {
+
+        const random = Math.floor(Math.random() * 10);
+
+        client.channels.cache.get(testChannelId).send(`@core remember we have raid today at ${raidOne.time}, dont be late <3`)
+        client.channels.cache.get(testChannelId).send(`${gatitos[random]}`)
+
+    });
+
+    raidOneAn.start()
+
+    const raidTwoAn = new CronJob(`0 12 20 * * ${raidOne.day}`, () => {
+
+        const random = Math.floor(Math.random() * 10);
+
+        client.channels.cache.get(testChannelId).send(`@core remember we have raid today at ${raidTwo.time}, dont be late <3`)
+        client.channels.cache.get(testChannelId).send(`${gatitos[random]}`)
+
+    });
+
+    raidTwoAn.start()
+
 })
 
-client.login(process.env.BOT_TOKEN);
+
+
 
 client.on('message', msg => {
     if( (msg.author.id != 790376929274232872) && (msg.content.includes('uwu')) 
     || msg.content.includes('UWU') || (msg.content.includes('Uwu')) ){
-        msg.channel.send('owo')
-    }
-})
+        msg.channel.send('owo') 
 
-client.on('message', msg => {
-    if( (msg.author.id != 790376929274232872) && (msg.content.includes('owo')) 
+    } else if( (msg.author.id != 790376929274232872) && (msg.content.includes('owo')) 
     || msg.content.includes('OWO') || (msg.content.includes('Owo')) ){
         msg.channel.send('uwu')
-    }
-})
 
-client.on('message', msg => {
-    if(msg.content === '!log'){
+    } else if(msg.content === '!log'){
         msg.channel.send('@core https://tenor.com/view/log-power-fire-burning-mad-gif-16474420')
-    }
-})
 
-client.on('message', msg => {
-    if( msg.content === '!gatitos' || msg.content === '!gatito' ){
+    } else if( msg.content === '!gatitos' || msg.content === '!gatito' ){
         const random = Math.floor(Math.random() * 10);
         msg.channel.send(gatitos[random]);
     }
