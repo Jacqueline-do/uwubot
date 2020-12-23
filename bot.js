@@ -48,7 +48,7 @@ const raidTwo = {
 client.on('ready', ()=> {
     console.log('Bot ready');
     
-    const raidOneAn = new CronJob(`0 10 20 * * ${raidOne.day}`, () => {
+    const raidOneAn = new CronJob(`0 10 23 * * ${raidOne.day}`, () => {
 
         const random = Math.floor(Math.random() * 10);
 
@@ -59,7 +59,7 @@ client.on('ready', ()=> {
 
     raidOneAn.start()
 
-    const raidTwoAn = new CronJob(`0 12 20 * * ${raidOne.day}`, () => {
+    const raidTwoAn = new CronJob(`0 12 23 * * ${raidOne.day}`, () => {
 
         const random = Math.floor(Math.random() * 10);
 
