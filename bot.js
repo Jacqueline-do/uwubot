@@ -16,9 +16,26 @@ const gatito10 = 'https://i.pinimg.com/564x/2e/59/db/2e59dbca2dae586d1a89cc868a6
 
 const gatitos = [gatito1, gatito2, gatito3, gatito4, gatito5, gatito6, gatito7, gatito8, gatito9, gatito10];
 
+var d = new Date();
+    var weekday = new Array(7);
+    weekday[0] = "Sunday";
+    weekday[1] = "Monday";
+    weekday[2] = "Tuesday";
+    weekday[3] = "Wednesday";
+    weekday[4] = "Thursday";
+    weekday[5] = "Friday";
+    weekday[6] = "Saturday";
+
+    var n = weekday[d.getDay()];
+
+    var h = d.getHours();
+    var m = d.getMinutes();
+    var s = d.getSeconds();
+
 client.on('ready', ()=> {
     console.log('Bot ready');
     console.log(client.user.id)
+    console.log(n , h , m , s)
 })
 
 client.login(process.env.BOT_TOKEN);
