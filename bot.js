@@ -20,50 +20,68 @@ const gatito10 = 'https://i.pinimg.com/564x/c3/10/5c/c3105cee5f7f39fb7936993204b
 const gatitos = [gatito1, gatito2, gatito3, gatito4, gatito5, gatito6, gatito7, gatito8, gatito9, gatito10];
 
 const raidOne = {
-    day: 3,
+    day: 'Tuesday',
+    dayNum: 2,
     time: '1am st / 6pm cst'
 }
 
 const raidTwo = {
-    day: 3,
+    day: 'Wednesday',
+    dayNum: 3,
     time: '3:30am st / 9:30pm cst'
 }
 
 
-    var d = new Date();
-    var weekday = new Array(7);
-    weekday[0] = "Sunday";
-    weekday[1] = "Monday";
-    weekday[2] = "Tuesday";
-    weekday[3] = "Wednesday";
-    weekday[4] = "Thursday";
-    weekday[5] = "Friday";
-    weekday[6] = "Saturday";
+    
+var d = new Date();
+var weekday = new Array(7);
+weekday[0] = "Sunday";
+weekday[1] = "Monday";
+weekday[2] = "Tuesday";
+weekday[3] = "Wednesday";
+weekday[4] = "Thursday";
+weekday[5] = "Friday";
+weekday[6] = "Saturday";
 
-    var n = weekday[d.getDay()];
+var n = weekday[d.getDay()];
 
+let raidTime;
+
+if(n === raidOne.day){
+    raidTime = raidOne.time
+}else if(n === raidTwo.day){
+    raidTime = raidTwo.time
+};
+
+const frase0 = `@core Hey poopies! dont forget we have raid today at ${raidTime}`;
+const frase1 = `@core remember we have raid today at ${raidTime}, dont be late <3`;
+const frase2 = `@core friendly uwu reminder that we have raid today at ${raidTime}`;
+
+
+const reminder = [frase0, frase1, frase2];
+
+
+const random = Math.floor(Math.random() * 10);
+const randomFrase = Math.floor(Math.random() * 3);
+    
     const anunChannelId = '747734434677260328' ;
     const testChannelId = '790406605438189598'
  
 client.on('ready', ()=> {
     console.log('Bot ready');
     
-    const raidOneAn = new CronJob(`0 10 23 * * ${raidOne.day}`, () => {
+    const raidOneAn = new CronJob(`0 30 15 * * ${raidOne.dayNum}`, () => {
 
-        const random = Math.floor(Math.random() * 10);
-
-        client.channels.cache.get(testChannelId).send(`@core remember we have raid today at ${raidOne.time}, dont be late <3`)
+        client.channels.cache.get(testChannelId).send(`${reminder[randomFrase]}`)
         client.channels.cache.get(testChannelId).send(`${gatitos[random]}`)
 
     });
 
     raidOneAn.start()
 
-    const raidTwoAn = new CronJob(`0 12 23 * * ${raidOne.day}`, () => {
+    const raidTwoAn = new CronJob(`0 30 15 * * ${raidTwo.dayNum}`, () => {
 
-        const random = Math.floor(Math.random() * 10);
-
-        client.channels.cache.get(testChannelId).send(`@core remember we have raid today at ${raidTwo.time}, dont be late <3`)
+        client.channels.cache.get(testChannelId).send(`${reminder[randomFrase]}`)
         client.channels.cache.get(testChannelId).send(`${gatitos[random]}`)
 
     });
