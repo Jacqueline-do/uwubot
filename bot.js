@@ -60,9 +60,6 @@ const frase2 = `@core friendly uwu reminder that we have raid today at ${raidTim
 
 const reminder = [frase0, frase1, frase2];
 
-
-const random = Math.floor(Math.random() * 10);
-const randomFrase = Math.floor(Math.random() * 3);
     
     const anunChannelId = '747734434677260328' ;
     const testChannelId = '790406605438189598'
@@ -72,6 +69,9 @@ client.on('ready', ()=> {
     
     const raidOneAn = new CronJob(`0 30 15 * * ${raidOne.dayNum}`, () => {
 
+        const random = Math.floor(Math.random() * 10);
+        const randomFrase = Math.floor(Math.random() * 3);
+
         client.channels.cache.get(testChannelId).send(`${reminder[randomFrase]}`)
         client.channels.cache.get(testChannelId).send(`${gatitos[random]}`)
 
@@ -80,6 +80,9 @@ client.on('ready', ()=> {
     raidOneAn.start()
 
     const raidTwoAn = new CronJob(`0 30 15 * * ${raidTwo.dayNum}`, () => {
+
+        const random = Math.floor(Math.random() * 10);
+        const randomFrase = Math.floor(Math.random() * 3);
 
         client.channels.cache.get(testChannelId).send(`${reminder[randomFrase]}`)
         client.channels.cache.get(testChannelId).send(`${gatitos[random]}`)
