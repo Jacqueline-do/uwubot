@@ -20,49 +20,31 @@ const gatito10 = 'https://i.pinimg.com/564x/c3/10/5c/c3105cee5f7f39fb7936993204b
 const gatitos = [gatito1, gatito2, gatito3, gatito4, gatito5, gatito6, gatito7, gatito8, gatito9, gatito10];
 
 const raidOne = {
-    day: 'Tuesday',
-    dayNum: 2,
+    day: 'Thursday',
+    dayNum: 4,
     time: '1am st / 6pm cst'
 }
 
 const raidTwo = {
-    day: 'Wednesday',
-    dayNum: 3,
+    day: 'Friday',
+    dayNum: 5,
     time: '3:30am st / 9:30pm cst'
 }
 
+const frase0 = `@core Hey poopies! dont forget we have raid today at ${raidOne.time}, pls log 15 mins earlier so we can clear trash <3`;
+const frase1 = `@core remember we have raid today at ${raidOne.time}, pls log 15 mins earlier so we can clear trash <3`;
+const frase2 = `@core friendly uwu reminder that we have raid today at ${raidOne.time},  pls log 15 mins earlier so we can clear trash <3`;
 
-    
-var d = new Date();
-var weekday = new Array(7);
-weekday[0] = "Sunday";
-weekday[1] = "Monday";
-weekday[2] = "Tuesday";
-weekday[3] = "Wednesday";
-weekday[4] = "Thursday";
-weekday[5] = "Friday";
-weekday[6] = "Saturday";
+const reminderOne = [frase0, frase1, frase2];
 
-var n = weekday[d.getDay()];
+const fraseDayTwo0 = `@core Hey poopies! we have cont today at ${raidTwo.time}, dont be late! <3`;
+const fraseDayTwo1 = `@core remember we have raid today at ${raidTwo.time}, no lag allowed`;
+const fraseDayTwo2 = `@core friendly uwu reminder that we have cont raid today at ${raidTwo.time}`;
 
-let raidTime;
-
-if(n === raidOne.day){
-    raidTime = raidOne.time
-}else if(n === raidTwo.day){
-    raidTime = raidTwo.time
-};
-
-const frase0 = `@core Hey poopies! dont forget we have raid today at ${raidTime}`;
-const frase1 = `@core remember we have raid today at ${raidTime}, dont be late <3`;
-const frase2 = `@core friendly uwu reminder that we have raid today at ${raidTime}`;
-
-
-const reminder = [frase0, frase1, frase2];
-
+const reminderTwo = [fraseDayTwo0, fraseDayTwo1, fraseDayTwo2];
     
     const anunChannelId = '747734434677260328' ;
-    const testChannelId = '790406605438189598'
+    const testChannelId = '790406605438189598' ;
  
 client.on('ready', ()=> {
     console.log('Bot ready');
@@ -72,7 +54,7 @@ client.on('ready', ()=> {
         const random = Math.floor(Math.random() * 10);
         const randomFrase = Math.floor(Math.random() * 3);
 
-        client.channels.cache.get(testChannelId).send(`${reminder[randomFrase]}`)
+        client.channels.cache.get(testChannelId).send(`${reminderOne[randomFrase]}`)
         client.channels.cache.get(testChannelId).send(`${gatitos[random]}`)
 
     });
@@ -84,8 +66,8 @@ client.on('ready', ()=> {
         const random = Math.floor(Math.random() * 10);
         const randomFrase = Math.floor(Math.random() * 3);
 
-        client.channels.cache.get(testChannelId).send(`${reminder[randomFrase]}`)
-        client.channels.cache.get(testChannelId).send(`${gatitos[random]}`)
+        client.channels.cache.get(anunChannelId).send(`${reminderTwo[randomFrase]}`)
+        client.channels.cache.get(anunChannelId).send(`${gatitos[random]}`)
 
     });
 
