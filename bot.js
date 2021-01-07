@@ -28,7 +28,7 @@ const raidOne = {
 const raidTwo = {
     day: 'Friday',
     dayNum: 5,
-    time: '3:30am st / 9:30pm cst'
+    time: '3:30am st / 8:30pm cst'
 }
 
 const frase0 = `@core Hey poopies! dont forget we have raid today at ${raidOne.time}, pls log 15 mins earlier so we can clear trash <3`;
@@ -54,8 +54,8 @@ client.on('ready', ()=> {
         const random = Math.floor(Math.random() * 10);
         const randomFrase = Math.floor(Math.random() * 3);
 
-        client.channels.cache.get(testChannelId).send(`${reminderOne[randomFrase]}`)
-        client.channels.cache.get(testChannelId).send(`${gatitos[random]}`)
+        client.channels.cache.get(anunChannelId).send(`${reminderOne[randomFrase]}`)
+        client.channels.cache.get(anunChannelId).send(`${gatitos[random]}`)
 
     });
 
