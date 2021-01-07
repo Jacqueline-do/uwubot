@@ -31,15 +31,15 @@ const raidTwo = {
     time: '3:30am st / 8:30pm cst'
 }
 
-const frase0 = `@everyone Hey poopies! dont forget we have raid today at ${raidOne.time}, pls log 15 mins earlier so we can clear trash <3`;
-const frase1 = `@everyone remember we have raid today at ${raidOne.time}, pls log 15 mins earlier so we can clear trash <3`;
-const frase2 = `@everyone friendly uwu reminder that we have raid today at ${raidOne.time},  pls log 15 mins earlier so we can clear trash <3`;
+const frase0 = `@core Hey poopies! dont forget we have raid today at ${raidOne.time}, pls log 15 mins earlier so we can clear trash <3`;
+const frase1 = `@core remember we have raid today at ${raidOne.time}, pls log 15 mins earlier so we can clear trash <3`;
+const frase2 = `@core friendly uwu reminder that we have raid today at ${raidOne.time},  pls log 15 mins earlier so we can clear trash <3`;
 
 const reminderOne = [frase0, frase1, frase2];
 
-const fraseDayTwo0 = `@everyone Hey poopies! we have cont today at ${raidTwo.time}, dont be late! <3`;
-const fraseDayTwo1 = `@everyone remember we have raid today at ${raidTwo.time}, no lag allowed`;
-const fraseDayTwo2 = `@everyone friendly uwu reminder that we have cont raid today at ${raidTwo.time}`;
+const fraseDayTwo0 = `@core Hey poopies! we have cont today at ${raidTwo.time}, dont be late! <3`;
+const fraseDayTwo1 = `@core remember we have raid today at ${raidTwo.time}, no lag allowed`;
+const fraseDayTwo2 = `@core friendly uwu reminder that we have cont raid today at ${raidTwo.time}`;
 
 const reminderTwo = [fraseDayTwo0, fraseDayTwo1, fraseDayTwo2];
     
@@ -88,7 +88,7 @@ client.on('message', msg => {
         msg.channel.send('uwu')
 
     } else if(msg.content === '!log'){
-        msg.channel.send('@everyone https://tenor.com/view/log-power-fire-burning-mad-gif-16474420')
+        msg.channel.send('@core https://tenor.com/view/log-power-fire-burning-mad-gif-16474420')
 
     } else if( msg.content === '!gatitos' || msg.content === '!gatito' ){
         const random = Math.floor(Math.random() * 10);
