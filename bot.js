@@ -6,6 +6,18 @@ const CronJob = require('cron').CronJob;
 
 client.login(process.env.BOT_TOKEN);
 
+//
+//ids 
+
+const coreRoleId = '756960788455096683';
+const anunChannelId = '747734434677260328' ;
+const testChannelId = '790406605438189598' ;
+const dinosOnlyId = '453265262851129344';
+const testRoleId = '797134085586812978';
+
+//
+//gatitos
+
 const gatito1 = 'https://i.imgur.com/CEbkjll.jpeg' ;
 const gatito2 = 'https://i.imgur.com/60aGajj.jpg';
 const gatito3 = 'https://imgur.com/SU0vpH0';
@@ -19,6 +31,9 @@ const gatito10 = 'https://i.pinimg.com/564x/c3/10/5c/c3105cee5f7f39fb7936993204b
 
 const gatitos = [gatito1, gatito2, gatito3, gatito4, gatito5, gatito6, gatito7, gatito8, gatito9, gatito10];
 
+//
+//raid info
+
 const raidOne = {
     day: 'Thursday',
     dayNum: 4,
@@ -31,23 +46,28 @@ const raidTwo = {
     time: '3:30am st / 8:30pm cst'
 }
 
-const frase0 = `@core Hey poopies! dont forget we have raid today at ${raidOne.time}, pls log 15 mins earlier so we can clear trash <3`;
-const frase1 = `@core remember we have raid today at ${raidOne.time}, pls log 15 mins earlier so we can clear trash <3`;
-const frase2 = `@core friendly uwu reminder that we have raid today at ${raidOne.time},  pls log 15 mins earlier so we can clear trash <3`;
+//
+//reminders
+
+const frase0 = `@${coreRoleId} Hey poopies! dont forget we have raid today at ${raidOne.time}, pls log 15 mins earlier so we can clear trash <3`;
+const frase1 = `@${coreRoleId} remember we have raid today at ${raidOne.time}, pls log 15 mins earlier so we can clear trash <3`;
+const frase2 = `@${coreRoleId} friendly uwu reminder that we have raid today at ${raidOne.time},  pls log 15 mins earlier so we can clear trash <3`;
 
 const reminderOne = [frase0, frase1, frase2];
 
-const fraseDayTwo0 = `@core Hey poopies! we have cont today at ${raidTwo.time}, dont be late! <3`;
-const fraseDayTwo1 = `@core remember we have raid today at ${raidTwo.time}, no lag allowed`;
-const fraseDayTwo2 = `@core friendly uwu reminder that we have cont raid today at ${raidTwo.time}`;
+const fraseDayTwo0 = `@${coreRoleId} Hey poopies! we have cont today at ${raidTwo.time}, dont be late! <3`;
+const fraseDayTwo1 = `@${coreRoleId} remember we have raid today at ${raidTwo.time}, no lag allowed`;
+const fraseDayTwo2 = `@${coreRoleId} friendly uwu reminder that we have cont raid today at ${raidTwo.time}`;
 
 const reminderTwo = [fraseDayTwo0, fraseDayTwo1, fraseDayTwo2];
-    
-    const anunChannelId = '747734434677260328' ;
-    const testChannelId = '790406605438189598' ;
- 
+
+//
+//bot on
+
 client.on('ready', ()=> {
     console.log('Bot ready');
+
+    client.channels.cache.get(testChannelId).send(`<@&${testRoleId}> just limon testing ignore`)
     
     const raidOneAn = new CronJob(`0 30 15 * * ${raidOne.dayNum}`, () => {
 
@@ -76,7 +96,8 @@ client.on('ready', ()=> {
 })
 
 
-
+//
+//bot replys
 
 client.on('message', msg => {
     if( (msg.author.id != 790376929274232872) && (msg.content.includes('uwu')) 
