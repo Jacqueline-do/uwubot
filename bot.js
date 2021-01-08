@@ -49,15 +49,15 @@ const raidTwo = {
 //
 //reminders
 
-const frase0 = `@${coreRoleId} Hey poopies! dont forget we have raid today at ${raidOne.time}, pls log 15 mins earlier so we can clear trash <3`;
-const frase1 = `@${coreRoleId} remember we have raid today at ${raidOne.time}, pls log 15 mins earlier so we can clear trash <3`;
-const frase2 = `@${coreRoleId} friendly uwu reminder that we have raid today at ${raidOne.time},  pls log 15 mins earlier so we can clear trash <3`;
+const frase0 = `<@${coreRoleId}> Hey poopies! dont forget we have raid today at ${raidOne.time}, pls log 15 mins earlier so we can clear trash `;
+const frase1 = `<@${coreRoleId}> remember we have raid today at ${raidOne.time}, pls log 15 mins earlier so we can clear trash`;
+const frase2 = `<@${coreRoleId}> friendly uwu reminder that we have raid today at ${raidOne.time},  pls log 15 mins earlier so we can clear trash`;
 
 const reminderOne = [frase0, frase1, frase2];
 
-const fraseDayTwo0 = `@${coreRoleId} Hey poopies! we have cont today at ${raidTwo.time}, dont be late! <3`;
-const fraseDayTwo1 = `@${coreRoleId} remember we have raid today at ${raidTwo.time}, no lag allowed`;
-const fraseDayTwo2 = `@${coreRoleId} friendly uwu reminder that we have cont raid today at ${raidTwo.time}`;
+const fraseDayTwo0 = `<@${coreRoleId}> Hey poopies! we have raid today at ${raidTwo.time}, dont be late!`;
+const fraseDayTwo1 = `<@${coreRoleId}> remember we have raid today at ${raidTwo.time}, no lag allowed`;
+const fraseDayTwo2 = `<@${coreRoleId}> friendly uwu reminder that we are raiding today at ${raidTwo.time}`;
 
 const reminderTwo = [fraseDayTwo0, fraseDayTwo1, fraseDayTwo2];
 
@@ -67,7 +67,7 @@ const reminderTwo = [fraseDayTwo0, fraseDayTwo1, fraseDayTwo2];
 client.on('ready', ()=> {
     console.log('Bot ready');
 
-    client.channels.cache.get(testChannelId).send(`<@&${testRoleId}> just limon testing ignore`)
+    client.channels.cache.get(testChannelId).send(`<@&${testRoleId}> bot on uwu`)
     
     const raidOneAn = new CronJob(`0 30 15 * * ${raidOne.dayNum}`, () => {
 
