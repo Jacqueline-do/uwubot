@@ -37,7 +37,7 @@ const gatitos = [gatito1, gatito2, gatito3, gatito4, gatito5, gatito6, gatito7, 
 const raidOne = {
     day: 'Thursday',
     dayNum: 4,
-    time: '1am st / 6pm cst'
+    time: '1:45am st / 6:45pm cst'
 }
 
 const raidTwo = {
@@ -49,15 +49,15 @@ const raidTwo = {
 //
 //reminders
 
-const frase0 = `<@&${coreRoleId}> Hey poopies! dont forget we have raid today at ${raidOne.time}, pls log 15 mins earlier so we can clear trash `;
-const frase1 = `<@&${coreRoleId}> remember we have raid today at ${raidOne.time}, pls log 15 mins earlier so we can clear trash`;
-const frase2 = `<@&${coreRoleId}> friendly uwu reminder that we have raid today at ${raidOne.time},  pls log 15 mins earlier so we can clear trash`;
+const frase0 = `<@&${coreRoleId}> Hey poopies! dont forget we have raid today at ${raidOne.time}, dont be late!`;
+const frase1 = `<@&${coreRoleId}> remember we have raid today at ${raidOne.time}, dont be late!`;
+const frase2 = `<@&${coreRoleId}> friendly uwu reminder that we have raid today at ${raidOne.time}, dont be late!`;
 
 const reminderOne = [frase0, frase1, frase2];
 
 const fraseDayTwo0 = `<@&${coreRoleId}> Hey poopies! we have raid today at ${raidTwo.time}, dont be late!`;
-const fraseDayTwo1 = `<@&${coreRoleId}> remember we have raid today at ${raidTwo.time}, no lag allowed`;
-const fraseDayTwo2 = `<@&${coreRoleId}> friendly uwu reminder that we are raiding today at ${raidTwo.time}`;
+const fraseDayTwo1 = `<@&${coreRoleId}> remember we have raid today at ${raidTwo.time}, dont be late!`;
+const fraseDayTwo2 = `<@&${coreRoleId}> friendly uwu reminder that we are raiding today at ${raidTwo.time}, dont be late!`;
 
 const reminderTwo = [fraseDayTwo0, fraseDayTwo1, fraseDayTwo2];
 
