@@ -15,6 +15,9 @@ const testChannelId = '790406605438189598' ;
 const dinosOnlyId = '453265262851129344';
 const testRoleId = '797134085586812978';
 
+const groupTwoChannelId = '808111352270946304';
+const coreTwoRoleId = '809655008165101578';
+
 //
 //gatitos
 
@@ -37,13 +40,19 @@ const gatitos = [gatito1, gatito2, gatito3, gatito4, gatito5, gatito6, gatito7, 
 const raidOne = {
     day: 'Thursday',
     dayNum: 4,
-    time: '1:45am st / 6:45pm cst'
+    time: '1:30am st / 7:30pm est'
 }
 
 const raidTwo = {
     day: 'Friday',
     dayNum: 5,
-    time: '3:30am st / 8:30pm cst'
+    time: '3:30am st / 9:30pm est'
+}
+
+const coreTwoRaid = {
+    day: 'Monday',
+    dayNum: 1,
+    time: '2:00am st / 8:00pm est'
 }
 
 //
@@ -68,6 +77,7 @@ client.on('ready', ()=> {
     console.log('Bot ready');
 
     client.channels.cache.get(testChannelId).send(`<@&${testRoleId}> bot on uwu`)
+    //client.channels.cache.get(groupTwoChannelId).send(`<@&${coreTwoRoleId}>uwu`)
     
     const raidOneAn = new CronJob(`0 30 15 * * ${raidOne.dayNum}`, () => {
 
@@ -100,12 +110,10 @@ client.on('ready', ()=> {
 //bot replys
 
 client.on('message', msg => {
-    if( (msg.author.id != 790376929274232872) && (msg.content.includes('uwu')) 
-    || msg.content.includes('UWU') || (msg.content.includes('Uwu')) ){
+    if( (msg.author.id != 790376929274232872) && (msg.content.toLowerCase().includes('uwu')) ){
         msg.channel.send('owo') 
 
-    } else if( (msg.author.id != 790376929274232872) && (msg.content.includes('owo')) 
-    || msg.content.includes('OWO') || (msg.content.includes('Owo')) ){
+    } else if( (msg.author.id != 790376929274232872) && (msg.content.toLowerCase().includes('owo')) ){
         msg.channel.send('uwu')
 
     } else if(msg.content === '!log'){
