@@ -40,19 +40,19 @@ const gatitos = [gatito1, gatito2, gatito3, gatito4, gatito5, gatito6, gatito7, 
 const raidOne = {
     day: 'Thursday',
     dayNum: 4,
-    time: '1:30am st / 7:30pm est'
+    time: '1:30am st / 8:30pm est'
 }
 
 const raidTwo = {
     day: 'Friday',
     dayNum: 5,
-    time: '3:30am st / 9:30pm est'
+    time: '3:30am st / 10:30pm est'
 }
 
 const coreTwoRaid = {
     day: 'Monday',
     dayNum: 1,
-    time: '2:00am st / 8:00pm est'
+    time: '1:00am st / 8:00pm est'
 }
 
 //
@@ -77,7 +77,6 @@ client.on('ready', ()=> {
     console.log('Bot ready');
 
     client.channels.cache.get(testChannelId).send(`<@&${testRoleId}> bot on uwu`)
-    //client.channels.cache.get(groupTwoChannelId).send(`<@&${coreTwoRoleId}>uwu`)
     
     const raidOneAn = new CronJob(`0 30 15 * * ${raidOne.dayNum}`, () => {
 
@@ -91,7 +90,7 @@ client.on('ready', ()=> {
 
     raidOneAn.start()
 
-    const raidTwoAn = new CronJob(`0 30 15 * * ${raidTwo.dayNum}`, () => {
+  /*   const raidTwoAn = new CronJob(`0 30 15 * * ${raidTwo.dayNum}`, () => {
 
         const random = Math.floor(Math.random() * 10);
         const randomFrase = Math.floor(Math.random() * 3);
@@ -101,7 +100,7 @@ client.on('ready', ()=> {
 
     });
 
-    raidTwoAn.start()
+    raidTwoAn.start() */
 
 })
 
