@@ -40,19 +40,19 @@ const gatitos = [gatito1, gatito2, gatito3, gatito4, gatito5, gatito6, gatito7, 
 const raidOne = {
     day: 'Thursday',
     dayNum: 4,
-    time: '1:30am st / 8:30pm est'
+    time: '1:00am st / 8:00pm est'
 }
 
 const raidTwo = {
     day: 'Friday',
     dayNum: 5,
-    time: '3:30am st / 10:30pm est'
+    time: '2:30am st / 9:30pm est'
 }
 
 const coreTwoRaid = {
     day: 'Monday',
     dayNum: 1,
-    time: '1:00am st / 8:00pm est'
+    time: '2:00am st / 9:00pm est'
 }
 
 //
@@ -90,7 +90,7 @@ client.on('ready', ()=> {
 
     raidOneAn.start()
 
-  /*   const raidTwoAn = new CronJob(`0 30 15 * * ${raidTwo.dayNum}`, () => {
+     const raidTwoAn = new CronJob(`0 30 15 * * ${raidTwo.dayNum}`, () => {
 
         const random = Math.floor(Math.random() * 10);
         const randomFrase = Math.floor(Math.random() * 3);
@@ -100,7 +100,17 @@ client.on('ready', ()=> {
 
     });
 
-    raidTwoAn.start() */
+    raidTwoAn.start() 
+
+
+    const coreTwoAn = new CronJob(`0 30 18 * * ${coreTwoRaid.dayNum}`, () => {
+
+    client.channels.cache.get(groupTwoChannelId).send(` Hey beautiful people of <@&${coreTwoRoleId}>, we are raiding today at ${coreTwoRaid.time}, dont be late!`)
+
+
+    });
+
+    coreTwoAn.start() 
 
 })
 
