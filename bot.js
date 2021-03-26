@@ -80,7 +80,7 @@ client.on('ready', ()=> {
     
     const raidOneAn = new CronJob(`0 30 15 * * ${raidOne.dayNum}`, () => {
 
-        const random = Math.floor(Math.random() * 10);
+        const random = Math.floor(Math.random()*(10 - 0)+0);
         const randomFrase = Math.floor(Math.random() * 3);
 
         client.channels.cache.get(anunChannelId).send(`${reminderOne[randomFrase]}`)
@@ -92,7 +92,7 @@ client.on('ready', ()=> {
 
      const raidTwoAn = new CronJob(`0 30 15 * * ${raidTwo.dayNum}`, () => {
 
-        const random = Math.floor(Math.random() * 10);
+        const random = Math.floor(Math.random()*(10 - 0)+0);
         const randomFrase = Math.floor(Math.random() * 3);
 
         client.channels.cache.get(anunChannelId).send(`${reminderTwo[randomFrase]}`)
