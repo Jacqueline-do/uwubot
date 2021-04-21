@@ -40,7 +40,7 @@ const gatitos = [gatito1, gatito2, gatito3, gatito4, gatito5, gatito6, gatito7, 
 const raidOne = {
     day: 'Thursday',
     dayNum: 4,
-    time: '2:00am st / 8:00pm est'
+    time: '2:40am st / 8:40pm est'
 }
 
 const raidTwo = {
