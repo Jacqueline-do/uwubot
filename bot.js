@@ -100,12 +100,12 @@ client.on('ready', ()=> {
 
     });
 
-    raidTwoAn.start() 
+    //raidTwoAn.start() 
 
 
     const coreTwoAn = new CronJob(`0 30 18 * * ${coreTwoRaid.dayNum}`, () => {
 
-    client.channels.cache.get(groupTwoChannelId).send(` Hey beautiful people of <@&${coreTwoRoleId}>, we are raiding today at ${coreTwoRaid.time}, dont be late!`)
+    client.channels.cache.get(groupTwoChannelId).send(` Helloos <@&${coreRoleId}>, we are raiding today at ${coreTwoRaid.time}, dont be late!`)
 
 
     });
