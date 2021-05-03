@@ -103,14 +103,14 @@ client.on('ready', ()=> {
     //raidTwoAn.start() 
 
 
-    const coreTwoAn = new CronJob(`0 30 18 * * ${coreTwoRaid.dayNum}`, () => {
+    //const coreTwoAn = new CronJob(`0 30 18 * * ${coreTwoRaid.dayNum}`, () => {
 
-    client.channels.cache.get(groupTwoChannelId).send(` Helloos <@&${coreRoleId}>, we are raiding today at ${coreTwoRaid.time}, dont be late!`)
+    //client.channels.cache.get(groupTwoChannelId).send(` Helloos <@&${coreRoleId}>, we are raiding today at ${coreTwoRaid.time}, dont be late!`)
 
 
-    });
+    //});
 
-    coreTwoAn.start() 
+    //coreTwoAn.start() 
 
 })
 
