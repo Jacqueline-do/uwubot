@@ -100,7 +100,7 @@ client.on('ready', ()=> {
 
     });
 
-    //raidTwoAn.start() 
+    raidTwoAn.start() 
 
 
     //const coreTwoAn = new CronJob(`0 30 18 * * ${coreTwoRaid.dayNum}`, () => {
