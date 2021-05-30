@@ -24,15 +24,21 @@ const coreTwoRoleId = '809655008165101578';
 const gatito1 = 'https://i.imgur.com/CEbkjll.jpeg' ;
 const gatito2 = 'https://i.imgur.com/60aGajj.jpg';
 const gatito3 = 'https://imgur.com/SU0vpH0';
-const gatito4 = 'https://i.pinimg.com/564x/11/7f/cd/117fcd17c24efc738a8697e02e81b103.jpg';
+const gatito4 = 'https://i.pinimg.com/564x/ed/14/1f/ed141fab1824f04581b9a444ad0833f4.jpg';
 const gatito5 = 'https://i.imgur.com/KWvtdg0.mp4';
 const gatito6 = 'https://i.pinimg.com/originals/8a/df/cf/8adfcf0b90aef150f56374c3dda25ede.png';
 const gatito7 = 'https://i.imgur.com/ryh89Vx.mp4';
 const gatito8 = 'https://i.pinimg.com/originals/0d/cf/dc/0dcfdc28e45540f709ee305ec4ff5289.jpg';
 const gatito9 = 'https://imgur.com/aifOQYw';
 const gatito10 = 'https://i.pinimg.com/564x/c3/10/5c/c3105cee5f7f39fb7936993204b732fb.jpg';
+const gatito11 = 'https://i.pinimg.com/564x/12/5c/77/125c77a1a879eb62cd838989dd44fc09.jpg';
+const gatito12 = 'https://i.pinimg.com/564x/7f/70/1d/7f701dc3098a220e8558d4be52b888aa.jpg';
+const gatito13 = 'https://i.pinimg.com/564x/20/9a/79/209a793468a7a88d4156378353784677.jpg';
+const gatito14 = 'https://i.pinimg.com/564x/e6/13/74/e613743083c80752f7ab3d816c9688de.jpg';
+const gatito15 = 'https://i.pinimg.com/564x/6f/8c/c4/6f8cc4c8bb07b4afcf1c7346f4100eda.jpg';
 
-const gatitos = [gatito1, gatito2, gatito3, gatito4, gatito5, gatito6, gatito7, gatito8, gatito9, gatito10];
+
+const gatitos = [gatito1, gatito2, gatito3, gatito4, gatito5, gatito6, gatito7, gatito8, gatito9, gatito10, gatito11, gatito12, gatito13, gatito14, gatito15];
 
 //
 //raid info
@@ -40,7 +46,7 @@ const gatitos = [gatito1, gatito2, gatito3, gatito4, gatito5, gatito6, gatito7, 
 const raidOne = {
     day: 'Thursday',
     dayNum: 4,
-    time: '2:40am st / 8:40pm est'
+    time: '3:30am st / 9:30pm est'
 }
 
 const raidTwo = {
@@ -80,7 +86,7 @@ client.on('ready', ()=> {
     
     const raidOneAn = new CronJob(`0 30 15 * * ${raidOne.dayNum}`, () => {
 
-        const random = Math.floor(Math.random()*(10 - 0)+0);
+        const random = Math.floor(Math.random()*(15 - 0)+0);
         const randomFrase = Math.floor(Math.random() * 3);
 
         client.channels.cache.get(anunChannelId).send(`${reminderOne[randomFrase]}`)
@@ -129,7 +135,7 @@ client.on('message', msg => {
         msg.channel.send(`<@&${coreRoleId}> https://tenor.com/view/log-power-fire-burning-mad-gif-16474420`)
 
     } else if( msg.content === '!gatitos' || msg.content === '!gatito' ){
-        const random = Math.floor(Math.random() * 10);
+        const random = Math.floor(Math.random() * 15);
         msg.channel.send(gatitos[random]);
     }
 })
