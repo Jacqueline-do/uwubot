@@ -42,15 +42,47 @@ const gatitos = [gatito1, gatito2, gatito3, gatito4, gatito5, gatito6, gatito7, 
 
 //
 //cumples
+    // name: '',
+    // day: ,
+    // month: ,
+    // id: '<@>'
 
-// const c1 = {
-//     name: 'Rapo', 
-//     day: 30,
-//     month: 5,
-//     id: '<@&285887505868521472>'
-// }
+const c0 = {
+    name: 'Rapo', 
+    day: 30,
+    month: 4,
+    id: '<@285887505868521472>'
+}
 
-// const cumpleañitos = [c1, c2, c3, c4, c5, c6, c7, c8, c9, c10, c11];
+const c1 = {
+    name:'Kalv',
+    day: 18,
+    month: 0, 
+    id: '<@379789480158035979>'
+}
+
+const c2 = {
+    name: 'Palmon',
+    day: 14,
+    month: 8,
+    id: '<@359501516333121557>'
+}
+
+const c3 = {
+    name: 'Kia',
+    day: 17,
+    month: 6,
+    id: '<@227838752242794496>'
+}
+
+const c4 = {
+    name: 'Matt',
+    day: 2,
+    month: 11,
+    id: '<@200950591864832000>'
+}
+
+const cumpleañitos = [c0, c1, c2, c3, c4];
 
 //
 //raid info
@@ -88,6 +120,7 @@ const fraseDayTwo2 = `<@&${coreRoleId}> friendly uwu reminder that we are raidin
 
 const reminderTwo = [fraseDayTwo0, fraseDayTwo1, fraseDayTwo2];
 
+
 //
 //bot on
 
@@ -121,14 +154,26 @@ client.on('ready', ()=> {
     raidTwoAn.start() 
 
 
-    //const coreTwoAn = new CronJob(`0 30 18 * * ${coreTwoRaid.dayNum}`, () => {
+    // const coreTwoAn = new CronJob(`0 30 18 * * ${coreTwoRaid.dayNum}`, () => {
 
-    //client.channels.cache.get(groupTwoChannelId).send(` Helloos <@&${coreRoleId}>, we are raiding today at ${coreTwoRaid.time}, dont be late!`)
+    // client.channels.cache.get(groupTwoChannelId).send(` Helloos <@&${coreRoleId}>, we are raiding today at ${coreTwoRaid.time}, dont be late!`)
 
 
-    //});
+    // });
 
     //coreTwoAn.start() 
+
+    //
+    //cumpleaños
+
+        cumpleañitos.map((cumple) => {
+            const cumreminder = new CronJob(`0 12 10 ${cumple.day} ${cumple.month} *`, () =>{
+
+                client.channels.cache.get(dinosOnlyId).send(`owo GUYS GUYS its ${cumple.id}'s birthday! dont be rude say something!!`)
+                client.channels.cache.get(dinosOnlyId).send(`https://giphy.com/gifs/dancing-dinosaur-t-rex-3rgXBvnbXtxwaWmhr2`)
+            })
+            cumreminder.start()
+        })
 
 })
 
