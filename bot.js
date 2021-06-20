@@ -82,7 +82,15 @@ const c4 = {
     id: '<@200950591864832000>'
 }
 
-const cumpleañitos = [c0, c1, c2, c3, c4];
+const c5 = {
+    name: 'Tivi',
+    day: 27,
+    month: 5,
+    id: '<@337420750682062848>'
+}
+
+
+const cumpleañitos = [c0, c1, c2, c3, c4, c5];
 
 //
 //raid info
@@ -153,27 +161,17 @@ client.on('ready', ()=> {
 
     raidTwoAn.start() 
 
+//
+//cumpleaños
 
-    // const coreTwoAn = new CronJob(`0 30 18 * * ${coreTwoRaid.dayNum}`, () => {
+    cumpleañitos.map((cumple) => {
+        const cumreminder = new CronJob(`0 12 10 ${cumple.day} ${cumple.month} *`, () =>{
 
-    // client.channels.cache.get(groupTwoChannelId).send(` Helloos <@&${coreRoleId}>, we are raiding today at ${coreTwoRaid.time}, dont be late!`)
-
-
-    // });
-
-    //coreTwoAn.start() 
-
-    //
-    //cumpleaños
-
-        cumpleañitos.map((cumple) => {
-            const cumreminder = new CronJob(`0 12 10 ${cumple.day} ${cumple.month} *`, () =>{
-
-                client.channels.cache.get(dinosOnlyId).send(`owo GUYS GUYS its ${cumple.id}'s birthday! dont be rude say something!!`)
-                client.channels.cache.get(dinosOnlyId).send(`https://giphy.com/gifs/dancing-dinosaur-t-rex-3rgXBvnbXtxwaWmhr2`)
-            })
-            cumreminder.start()
+            client.channels.cache.get(dinosOnlyId).send(`owo GUYS GUYS its ${cumple.id}'s birthday! dont be rude say something!!`)
+            client.channels.cache.get(dinosOnlyId).send(`https://giphy.com/gifs/dancing-dinosaur-t-rex-3rgXBvnbXtxwaWmhr2`)
         })
+           cumreminder.start()
+    })
 
 })
 
