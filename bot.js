@@ -41,25 +41,37 @@ const gatito15 = 'https://i.pinimg.com/564x/6f/8c/c4/6f8cc4c8bb07b4afcf1c7346f41
 const gatitos = [gatito1, gatito2, gatito3, gatito4, gatito5, gatito6, gatito7, gatito8, gatito9, gatito10, gatito11, gatito12, gatito13, gatito14, gatito15];
 
 //
+//cumples
+
+// const c1 = {
+//     name: 'Rapo', 
+//     day: 30,
+//     month: 5,
+//     id: '<@&285887505868521472>'
+// }
+
+// const cumpleañitos = [c1, c2, c3, c4, c5, c6, c7, c8, c9, c10, c11];
+
+//
 //raid info
 
 const raidOne = {
-    day: 'Thursday',
-    dayNum: 4,
-    time: '3:30am st / 9:30pm est'
+    day: 'Wednesday',
+    dayNum: 3,
+    time: '3:00am st / 9:00pm est'
 }
 
 const raidTwo = {
-    day: 'Friday',
-    dayNum: 5,
-    time: '3:30am st / 9:30pm est'
-}
-
-const coreTwoRaid = {
-    day: 'Monday',
-    dayNum: 1,
+    day: 'Thursday',
+    dayNum: 4,
     time: '3:00am st / 9:00pm est'
 }
+
+// const coreTwoRaid = {
+//     day: 'Monday',
+//     dayNum: 1,
+//     time: '3:00am st / 9:00pm est'
+// }
 
 //
 //reminders
