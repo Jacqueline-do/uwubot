@@ -89,8 +89,28 @@ const c5 = {
     id: '<@337420750682062848>'
 }
 
+const c6 = {
+    name: 'Gala',
+    day: 27,
+    month: 7,
+    id: '<@483452813326680090>'
+}
 
-const cumpleañitos = [c0, c1, c2, c3, c4, c5];
+const c7 = {
+    name: 'Tea',
+    day: 29,
+    month: 7,
+    id: '<@330844538832683010>'
+}
+
+const c8 = {
+    name: 'Gin',
+    day: 14,
+    month: 1,
+    id: '<@172074156765085696>'
+}
+
+const cumpleañitos = [c0, c1, c2, c3, c4, c5, c6, c7, c8, c9, c10];
 
 //
 //raid info
@@ -164,13 +184,13 @@ client.on('ready', ()=> {
 //
 //cumpleaños
 
-    cumpleañitos.map((cumple) => {
-        const cumreminder = new CronJob(`0 12 10 ${cumple.day} ${cumple.month} *`, () =>{
+    cumpleañitos.map((cum) => {
+        const cumReminder = new CronJob(`0 12 10 ${cum.day} ${cum.month} *`, () =>{
 
-            client.channels.cache.get(dinosOnlyId).send(`owo GUYS GUYS its ${cumple.id}'s birthday! dont be rude say something!!`)
+            client.channels.cache.get(dinosOnlyId).send(`GUYS GUYS its ${cumple.id}'s birthday! dont be rude say something!!`)
             client.channels.cache.get(dinosOnlyId).send(`https://giphy.com/gifs/dancing-dinosaur-t-rex-3rgXBvnbXtxwaWmhr2`)
         })
-           cumreminder.start()
+           cumReminder.start()
     })
 
 })
