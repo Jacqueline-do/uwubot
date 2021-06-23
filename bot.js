@@ -110,7 +110,7 @@ const c8 = {
     id: '<@172074156765085696>'
 }
 
-const cumpleañitos = [c0, c1, c2, c3, c4, c5, c6, c7, c8, c9, c10];
+const cumpleañitos = [c0, c1, c2, c3, c4, c5, c6, c7, c8];
 
 //
 //raid info
@@ -189,8 +189,8 @@ client.on('ready', ()=> {
 
             client.channels.cache.get(dinosOnlyId).send(`GUYS GUYS its ${cumple.id}'s birthday! dont be rude say something!!`)
             client.channels.cache.get(dinosOnlyId).send(`https://giphy.com/gifs/dancing-dinosaur-t-rex-3rgXBvnbXtxwaWmhr2`)
-        })
-           cumReminder.start()
+            })
+        cumReminder.start()
     })
 
 })
