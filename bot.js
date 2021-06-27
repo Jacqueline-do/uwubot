@@ -185,9 +185,9 @@ client.on('ready', ()=> {
 //cumpleaños
 
     cumpleañitos.map((cum) => {
-        const cumReminder = new CronJob(`0 12 10 ${cum.day} ${cum.month} *`, () =>{
+        const cumReminder = new CronJob(`0 12 12 ${cum.day} ${cum.month} *`, () =>{
 
-            client.channels.cache.get(dinosOnlyId).send(`GUYS GUYS its ${cumple.id}'s birthday! dont be rude say something!!`)
+            client.channels.cache.get(dinosOnlyId).send(`GUYS GUYS its ${cum.id}'s birthday! dont be rude say something!!`)
             client.channels.cache.get(dinosOnlyId).send(`https://giphy.com/gifs/dancing-dinosaur-t-rex-3rgXBvnbXtxwaWmhr2`)
             })
         cumReminder.start()
