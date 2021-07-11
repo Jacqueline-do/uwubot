@@ -157,7 +157,7 @@ client.on('ready', ()=> {
 
     client.channels.cache.get(testChannelId).send(`<@&${testRoleId}> bot on uwu`)
     
-    const raidOneAn = new CronJob(`0 30 15 * * ${raidOne.dayNum}`, () => {
+    const raidOneAn = new CronJob(`0 30 13 * * ${raidOne.dayNum}`, () => {
 
         const random = Math.floor(Math.random()*(15 - 0)+0);
         const randomFrase = Math.floor(Math.random() * 3);
@@ -185,7 +185,7 @@ client.on('ready', ()=> {
 //cumpleaños
 
     cumpleañitos.map((cum) => {
-        const cumReminder = new CronJob(`0 12 12 ${cum.day} ${cum.month} *`, () =>{
+        const cumReminder = new CronJob(`0 17 12 ${cum.day} ${cum.month} *`, () =>{
 
             client.channels.cache.get(dinosOnlyId).send(`GUYS GUYS its ${cum.id}'s birthday! dont be rude say something!!`)
             client.channels.cache.get(dinosOnlyId).send(`https://giphy.com/gifs/dancing-dinosaur-t-rex-3rgXBvnbXtxwaWmhr2`)
