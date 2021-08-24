@@ -157,7 +157,7 @@ client.on('ready', ()=> {
 
     client.channels.cache.get(testChannelId).send(`<@&${testRoleId}> bot on uwu`)
     
-    const raidOneAn = new CronJob(`0 30 13 * * ${raidOne.dayNum}`, () => {
+    const raidOneAn = new CronJob(`0 30 15 * * ${raidOne.dayNum}`, () => {
 
         const random = Math.floor(Math.random()*(15 - 0)+0);
         const randomFrase = Math.floor(Math.random() * 3);
@@ -167,9 +167,9 @@ client.on('ready', ()=> {
 
     });
 
-    raidOneAn.start()
+    //raidOneAn.start()
 
-     const raidTwoAn = new CronJob(`0 30 15 * * ${raidTwo.dayNum}`, () => {
+     const raidTwoAn = new CronJob(`0 52 13 * * ${raidTwo.dayNum}`, () => {
 
         const random = Math.floor(Math.random()*(10 - 0)+0);
         const randomFrase = Math.floor(Math.random() * 3);
