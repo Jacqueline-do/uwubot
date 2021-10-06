@@ -179,7 +179,7 @@ client.on('ready', ()=> {
 
     });
 
-    raidTwoAn.start() 
+     //raidTwoAn.start() 
 
 //
 //cumpleaños
@@ -187,7 +187,7 @@ client.on('ready', ()=> {
     cumpleañitos.map((cum) => {
         const cumReminder = new CronJob(`0 17 12 ${cum.day} ${cum.month} *`, () =>{
 
-            client.channels.cache.get(dinosOnlyId).send(`GUYS GUYS its ${cum.id}'s birthday! dont be rude say something!!`)
+            client.channels.cache.get(dinosOnlyId).send(`Happy birthday ${cum.id} uwu`)
             client.channels.cache.get(dinosOnlyId).send(`https://giphy.com/gifs/dancing-dinosaur-t-rex-3rgXBvnbXtxwaWmhr2`)
             })
         cumReminder.start()
