@@ -110,7 +110,14 @@ const c8 = {
     id: '<@172074156765085696>'
 }
 
-const cumpleañitos = [c0, c1, c2, c3, c4, c5, c6, c7, c8];
+const c9 = {
+    name: 'Nachi',
+    day: 18,
+    month: 10,
+    id: '<@233378125256458241>'
+}
+
+const cumpleañitos = [c0, c1, c2, c3, c4, c5, c6, c7, c8, c9];
 
 //
 //raid info
